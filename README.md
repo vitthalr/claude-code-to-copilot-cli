@@ -18,6 +18,27 @@ In short: **same brain if you want it, a much bigger toolbox, and tighter GitHub
 
 ---
 
+## If you remember only 10 things
+
+You do **not** need to memorize the big table below. For vibe-coding, these 10 moves are enough — everything else is bonus power you can grow into:
+
+| # | Do this | What it's for |
+|---|---|---|
+| 1 | `copilot` | Start it in any folder |
+| 2 | `/model` | Pick your AI brain (Claude, GPT-5, Gemini…) |
+| 3 | `@file` | Show it a file |
+| 4 | `!command` | Run a terminal command |
+| 5 | `/init` | Teach it your project's "house rules" |
+| 6 | `/diff` | See what changed |
+| 7 | `/undo` (or `/rewind`) | Take back the last step |
+| 8 | `/compact` | Shrink a long chat to stay fast |
+| 9 | `/resume` | Jump back into an earlier chat |
+| 10 | `/help` | See everything |
+
+> 📋 **A note on availability:** Copilot CLI is rolling out fast. Some commands sit behind feature flags, account entitlements, or your organization's policy. **If a command below doesn't appear in your `/help`, you're not doing anything wrong** — it just may not be switched on for your account yet. The 10 moves above work for everyone.
+
+---
+
 ## 1. Claude Code → Copilot CLI: what's the difference?
 
 If your fingers already know Claude Code, here's the quick translation. Most things are the same; a few have new names.
@@ -55,7 +76,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 
 > **How to read this table:** The middle column is the **exact words Copilot shows you** when you type `/`. The right column is the same idea **in plain English**, with an example of how to type it. Some commands take extra input (shown in `< >`) — just type the command, a space, then your text.
 
-> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is fair game for you. A **⚠️** means the command is **internal/staff-only**, so it may not show up on your account.
+> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is useful to know, though your exact `/help` list can vary by account, rollout, and organization policy. A **⚠️** means the command is **internal or still rolling out**, so it may not show up for you yet.
 
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -72,9 +93,9 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. *Type `/model` and pick one.* ⭐ |
 | `/delegate` | Send this session to GitHub and Copilot will create a PR | Hand the whole task to GitHub's cloud; it does the work and opens a pull request for you. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
 | `/fleet` | Enable fleet mode for parallel subagent execution | Runs several helper agents at the same time, so big jobs finish faster. *Type `/fleet` then describe the work.* ⭐ |
-| `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests`.* ⭐ |
+| `/autopilot` ⚠️ | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests`. ⚠️ Experimental — may be rolling out.* ⭐ |
 | `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. *Type `/tasks`.* |
-| `/rubber-duck` | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question).* ⭐ |
+| `/rubber-duck` ⚠️ | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question). ⚠️ Rolling out — may not appear yet.* ⭐ |
 
 ### 💻 Write & review code
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -119,7 +140,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
 | `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
 | `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot remember things between sessions. *Type `/memory show`, or `/memory on`.* |
-| `/subconscious` 🔧 | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`.* |
+| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`. ⚠️ Experimental — may be rolling out.* |
 | `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. *Type `/keep-alive`.* |
 | `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. *Type `/chronicle`.* |
 
@@ -158,7 +179,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/version` | Display version information and check for updates | Show which version you're on. *Type `/version`.* |
 | `/exit` | Exit the CLI; use 'print' to print the session after exiting alt screen | Quit. *Type `/exit`.* |
 
-⭐ = a standout capability that makes Copilot CLI shine (Claude Code either lacks it or doesn't do it as cleanly).
+⭐ = an especially useful Copilot CLI feature or workflow. (Availability may vary by account and rollout.)
 
 ---
 
@@ -231,7 +252,7 @@ COPILOT_CUSTOM_INSTRUCTIONS_DIRS       ← env var for extra folders
 ## 6. Five things that will pleasantly surprise you
 
 1. **It asks before acting.** Every shell command asks for an OK by default. Use `/allow-all` (or `/add-dir`) in folders you trust to speed things up.
-2. **`/delegate` is magic.** Hand off a task → it runs on GitHub's servers → you get a pull request back. No setup.
+2. **`/delegate` is magic when available.** In an eligible GitHub repo it hands the task to the cloud and opens a pull request for you.
 3. **`/fleet` runs many agents at once.** Great for big, repetitive jobs.
 4. **`/remote` = phone control.** Walk away and steer from GitHub mobile or web.
 5. **`/every` and `/after` schedule work.** "Every 10 minutes, run the tests." It's a cron job for your agent.
@@ -251,7 +272,7 @@ SWITCH MODES   shift+tab
 TALK TO IT     /voice
 UNDO           /undo   or  /rewind
 NEW CHAT       /new
-GO FASTER      /allow-all
+TRUST A FOLDER /allow-all         (only in folders you trust!)
 BIG TASK       /delegate         (→ GitHub PR)
 MANY AT ONCE   /fleet
 SECOND OPINION /rubber-duck
