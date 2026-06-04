@@ -55,7 +55,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 
 > **How to read this table:** The middle column is the **exact words Copilot shows you** when you type `/`. The right column is the same idea **in plain English**, with an example of how to type it. Some commands take extra input (shown in `< >`) — just type the command, a space, then your text.
 
-> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is fair game for you.
+> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is fair game for you. A **⚠️** means the command is **internal/staff-only**, so it may not show up on your account.
 
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -69,8 +69,8 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### 🤖 Pick a brain & run helpers
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. *Type `/model` and pick one.* ⭐ |
-| `/delegate` | Send this session to GitHub and Copilot will create a PR | Hand the whole task to GitHub's cloud; it does the work and opens a pull request for you. *Type `/delegate`.* ⭐ |
+| `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. *Type `/model` and pick one.* ⭐ |
+| `/delegate` | Send this session to GitHub and Copilot will create a PR | Hand the whole task to GitHub's cloud; it does the work and opens a pull request for you. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
 | `/fleet` | Enable fleet mode for parallel subagent execution | Runs several helper agents at the same time, so big jobs finish faster. *Type `/fleet` then describe the work.* ⭐ |
 | `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests`.* ⭐ |
 | `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. *Type `/tasks`.* |
@@ -91,7 +91,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### 🔐 Permissions & safety
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/allow-all` | Enable all permissions (tools, paths, and URLs) | Stops asking "is this OK?" for everything — fast, but use only in folders you trust. *Type `/allow-all`.* |
+| `/allow-all` | Enable all permissions (tools, paths, and URLs) | Stops asking "is this OK?" for everything — fast, but **only use it in folders you trust** (it can run any command). *Type `/allow-all`.* |
 | `/add-dir` 🔧 | Add a directory to the allowed list for file access | Lets Copilot touch one extra folder. *Type `/add-dir ./my-folder`.* |
 | `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
 | `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
@@ -116,7 +116,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### ⏰ Memory & scheduling (the "set it and forget it" powers)
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
+| `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
 | `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
 | `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot remember things between sessions. *Type `/memory show`, or `/memory on`.* |
 | `/subconscious` 🔧 | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`.* |
@@ -129,19 +129,18 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/research` | Run deep research investigation using GitHub search and web sources | Does deep homework across GitHub and the web, with sources. *Type `/research best way to cache in Redis`.* ⭐ |
 | `/ask` | Ask a quick side question without adding to conversation history | A quick side question that won't clutter the main chat. *Type `/ask what does this error mean?`* |
 | `/search` | Search the conversation timeline | Find something said earlier in this chat. *Type `/search database`.* |
-| `/sidekicks` 🔧 | View running sidekick agents | See little helper agents running in the background. *Advanced/opt-in — usually empty unless sidekick agents are configured, so don't expect output by default.* |
 
 ### 🎙️ Voice, help & settings
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/voice` | Manage voice mode (dictation transcription via Foundry Local) | Talk instead of type — your speech is turned into text on-device. *Type `/voice` to set it up.* |
+| `/voice` | Manage voice mode (dictation transcription via Foundry Local) | Talk instead of type — your speech becomes text **on your own device** (private). *First use downloads a model; pick the larger one for fewer errors.* |
 | `/help` | Show help for interactive commands | The full command list. *Type `/help`.* |
 | `/changelog` | Display changelog for CLI versions. Add 'summarize' to get an AI summary. | See what's new in each version. *Type `/changelog`, or `/changelog summarize`.* |
 | `/feedback` | Provide feedback about the CLI | Tell the GitHub team what's good or broken. *Type `/feedback`.* |
 | `/theme` | View or set color mode | Switch colors (light/dark/custom). *Type `/theme`.* |
 | `/statusline` | Configure status line items | Customize the info bar at the bottom. *Type `/statusline`.* |
 | `/footer` | Configure status line items | Customize the footer bar. *Type `/footer`.* |
-| `/streamer-mode` | Toggle streamer mode (hides preview model names and quota details for streaming) | Hides private details — perfect for live demos or screen-sharing. *Type `/streamer-mode`.* |
+| `/streamer-mode` ⚠️ | Toggle streamer mode (hides preview model names and quota details for streaming) | Hides private details when screen-sharing — your **quota %** in the footer, and **preview model names** (in the `/model` list they show as *"Hidden Model 1, 2, 3…"*). *Turn it ON before you present. ⚠️ Internal/staff-only — may not appear on every account.* |
 | `/instructions` 🔧 | View and toggle custom instruction files | See and switch which "house rules" files are active. *Type `/instructions`.* |
 | `/env` 🔧 | Show loaded environment details (instructions, MCP servers, skills, agents, plugins, LSPs, extensions) | One screen showing everything that's loaded. *Type `/env`.* |
 | `/experimental` 🔧 | Show available experimental features, or enable/disable experimental mode | Turn on early, in-progress features. *Type `/experimental`.* |
