@@ -91,103 +91,103 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. *Type `/init` once per project. Add `/init suppress` to do it quietly (it still writes the file, just without the chatty output).* |
-| `/agent` | Browse and select from available agents (if any) | Picks a **specialist helper** for the job — like choosing the right expert from a list. *Type `/agent` and choose one.* |
-| `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). *Options: `list` (see all skills) · `info` (details of one) · `reload` (refresh after changes).* |
-| `/mcp` | Manage MCP server configuration | Plugs **outside tools** into Copilot — like a browser, a database, or Figma. Think of it as adding new apps to your phone. *Options: `list` (see connected tools) · `show` (details of one) · `enable` / `disable` (turn a tool on/off) · `reload` (refresh).* |
-| `/plugin` | Manage plugins and plugin marketplaces | Installs bundles of extra features from a store. *Type `/plugin list`.* |
+| `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. <br>*Type `/init` once per project. Add `/init suppress` to do it quietly (it still writes the file, just without the chatty output).* |
+| `/agent` | Browse and select from available agents (if any) | Picks a **specialist helper** for the job — like choosing the right expert from a list. <br>*Type `/agent` and choose one.* |
+| `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). <br>*Options: `list` (see all skills) · `info` (details of one) · `reload` (refresh after changes).* |
+| `/mcp` | Manage MCP server configuration | Plugs **outside tools** into Copilot — like a browser, a database, or Figma. Think of it as adding new apps to your phone. <br>*Options: `list` (see connected tools) · `show` (details of one) · `enable` / `disable` (turn a tool on/off) · `reload` (refresh).* |
+| `/plugin` | Manage plugins and plugin marketplaces | Installs bundles of extra features from a store. <br>*Type `/plugin list`.* |
 
 ### 🤖 Pick a brain & run helpers
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. *Type `/model` and pick one.* ⭐ |
-| `/delegate` | Send this session to GitHub and Copilot will create a PR | **Hand the whole job to GitHub's cloud** — it does the work on its own computers and hands you back finished changes (a "pull request") to review. You don't have to babysit it. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
-| `/fleet` | Enable fleet mode for parallel subagent execution | Puts **several helpers to work at the same time** instead of one, so big jobs finish faster — like a team splitting up chores. *Type `/fleet` then describe the work.* ⭐ |
-| `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep working on its own until the goal is met. *Options: `on` / `off` (turn it on or off) · or type a goal like `/autopilot fix all failing tests` (giving an explicit goal may be rolling out).* ⭐ |
-| `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. *Type `/tasks`.* |
-| `/rubber-duck` | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question).* ⭐ |
+| `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. <br>*Type `/model` and pick one.* ⭐ |
+| `/delegate` | Send this session to GitHub and Copilot will create a PR | **Hand the whole job to GitHub's cloud** — it does the work on its own computers and hands you back finished changes (a "pull request") to review. You don't have to babysit it. <br>*Needs a GitHub repo. Type `/delegate`.* ⭐ |
+| `/fleet` | Enable fleet mode for parallel subagent execution | Puts **several helpers to work at the same time** instead of one, so big jobs finish faster — like a team splitting up chores. <br>*Type `/fleet` then describe the work.* ⭐ |
+| `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep working on its own until the goal is met. <br>*Options: `on` / `off` (turn it on or off) · or type a goal like `/autopilot fix all failing tests` (giving an explicit goal may be rolling out).* ⭐ |
+| `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. <br>*Type `/tasks`.* |
+| `/rubber-duck` | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. <br>*Type `/rubber-duck` (optionally add a question).* ⭐ |
 
 ### 💻 Write & review code
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/ide` | Connect to an IDE workspace | Links Copilot to your **code editor** (VS Code) so they share the same files and you see changes live. *Type `/ide`.* |
-| `/diff` | Review the changes made in the current directory | Shows exactly what was changed, line by line. *Type `/diff`.* |
-| `/pr` 🔧 | Operate on pull requests for the current branch | Create, view, or work on a GitHub pull request. *Type `/pr`.* |
-| `/review` | Run code review agent to analyze changes | A robot reviewer reads your changes and flags real problems. *Type `/review`.* ⭐ |
-| `/security-review` 🔧 | Analyze staged and unstaged changes for security vulnerabilities. | Scans your changes for security holes before you ship. *Type `/security-review` (optionally add instructions).* ⭐ |
-| `/lsp` 🔧 | Manage language server configuration | Controls the "spell-checker for code" (TypeScript, Python, etc.). *Type `/lsp`.* |
-| `/plan` | Create an implementation plan before coding | Makes a step-by-step plan first, then codes. *Type `/plan build a login page`.* |
-| `/terminal-setup` 🔧 | Configure terminal for multiline input support (shift+enter) | One-time setup so `shift+enter` makes a new line. *Type `/terminal-setup` once.* |
+| `/ide` | Connect to an IDE workspace | Links Copilot to your **code editor** (VS Code) so they share the same files and you see changes live. <br>*Type `/ide`.* |
+| `/diff` | Review the changes made in the current directory | Shows exactly what was changed, line by line. <br>*Type `/diff`.* |
+| `/pr` 🔧 | Operate on pull requests for the current branch | Create, view, or work on a GitHub pull request. <br>*Type `/pr`.* |
+| `/review` | Run code review agent to analyze changes | A robot reviewer reads your changes and flags real problems. <br>*Type `/review`.* ⭐ |
+| `/security-review` 🔧 | Analyze staged and unstaged changes for security vulnerabilities. | Scans your changes for security holes before you ship. <br>*Type `/security-review` (optionally add instructions).* ⭐ |
+| `/lsp` 🔧 | Manage language server configuration | Controls the "spell-checker for code" (TypeScript, Python, etc.). <br>*Type `/lsp`.* |
+| `/plan` | Create an implementation plan before coding | Makes a step-by-step plan first, then codes. <br>*Type `/plan build a login page`.* |
+| `/terminal-setup` 🔧 | Configure terminal for multiline input support (shift+enter) | One-time setup so `shift+enter` makes a new line. <br>*Type `/terminal-setup` once.* |
 
 ### 🔐 Permissions & safety
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/allow-all` | Enable all permissions (tools, paths, and URLs) | Stops asking "is this OK?" for everything — fast, but **only use it in folders you trust** (it can run any command). *Type `/allow-all`.* |
-| `/add-dir` 🔧 | Add a directory to the allowed list for file access | Lets Copilot touch one extra folder. *Type `/add-dir ./my-folder`.* |
-| `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
-| `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
-| `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
-| `/sandbox` 🔧 | Configure sandbox modes | Puts a **safety wall** around the agent: it can work inside your project folder, but **can't touch the rest of your computer**. Like saying "you can play in this room, but the other doors are locked." *Options: `enable` (wall on) · `disable` (wall off).* |
+| `/allow-all` | Enable all permissions (tools, paths, and URLs) | Stops asking "is this OK?" for everything — fast, but **only use it in folders you trust** (it can run any command). <br>*Type `/allow-all`.* |
+| `/add-dir` 🔧 | Add a directory to the allowed list for file access | Lets Copilot touch one extra folder. <br>*Type `/add-dir ./my-folder`.* |
+| `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. <br>*Type `/list-dirs`.* |
+| `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. <br>*Type `/cwd` to see it, or `/cwd ./project` to move.* |
+| `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. <br>*Type `/reset-allowed-tools`.* |
+| `/sandbox` 🔧 | Configure sandbox modes | Puts a **safety wall** around the agent: it can work inside your project folder, but **can't touch the rest of your computer**. Like saying "you can play in this room, but the other doors are locked." <br>*Options: `enable` (wall on) · `disable` (wall off).* |
 
 ### 🗂️ Manage your session
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/resume` | Switch to a different session (optionally specify session ID, task ID, or name) | Re-opens an earlier conversation. *Type `/resume`.* |
-| `/rename` | Rename the current session | Gives this chat a memorable name. *Type `/rename demo-prep`.* |
-| `/context` | Show context window token usage and visualization | Shows **how full the AI's short-term memory is** right now — like a battery bar for how much it can still keep in mind. *Type `/context`.* |
-| `/usage` | Display session usage metrics and statistics | Shows **how much you've used** in this chat (requests, etc.) — like checking your data usage. *Type `/usage`.* |
-| `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your chats. *Options: `info` (this chat's details) · `checkpoints` (saved restore points) · `files` (files this chat touched) · `plan` (the current plan) · `rename` (give it a name).* |
-| `/compact` | Summarize conversation history to reduce context window usage. Optionally provide focus instructions. | When a chat gets long and slow, this **shrinks it into a short summary** so the AI stays fast — like zipping a big file. *Type `/compact`, or `/compact keep the login details`.* |
-| `/share` | Share session or research report to markdown file, HTML file, or GitHub gist | Saves the conversation as a file or link you can send. *Type `/share`.* |
-| `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. *Options: `on` (allow phone control) · `off` (stop it) · `show` (check status).* ⭐ |
-| `/copy` | Copy the last response to the clipboard | Copies the last answer so you can paste it. *Type `/copy`.* |
-| `/rewind` | Rewind the last turn and revert file changes | Undo button — takes back the last step and its file edits. *Type `/rewind`.* |
-| `/undo` | Rewind the last turn and revert file changes | Same as `/rewind`. *Type `/undo`.* |
+| `/resume` | Switch to a different session (optionally specify session ID, task ID, or name) | Re-opens an earlier conversation. <br>*Type `/resume`.* |
+| `/rename` | Rename the current session | Gives this chat a memorable name. <br>*Type `/rename demo-prep`.* |
+| `/context` | Show context window token usage and visualization | Shows **how full the AI's short-term memory is** right now — like a battery bar for how much it can still keep in mind. <br>*Type `/context`.* |
+| `/usage` | Display session usage metrics and statistics | Shows **how much you've used** in this chat (requests, etc.) — like checking your data usage. <br>*Type `/usage`.* |
+| `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your chats. <br>*Options: `info` (this chat's details) · `checkpoints` (saved restore points) · `files` (files this chat touched) · `plan` (the current plan) · `rename` (give it a name).* |
+| `/compact` | Summarize conversation history to reduce context window usage. Optionally provide focus instructions. | When a chat gets long and slow, this **shrinks it into a short summary** so the AI stays fast — like zipping a big file. <br>*Type `/compact`, or `/compact keep the login details`.* |
+| `/share` | Share session or research report to markdown file, HTML file, or GitHub gist | Saves the conversation as a file or link you can send. <br>*Type `/share`.* |
+| `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. <br>*Options: `on` (allow phone control) · `off` (stop it) · `show` (check status).* ⭐ |
+| `/copy` | Copy the last response to the clipboard | Copies the last answer so you can paste it. <br>*Type `/copy`.* |
+| `/rewind` | Rewind the last turn and revert file changes | Undo button — takes back the last step and its file edits. <br>*Type `/rewind`.* |
+| `/undo` | Rewind the last turn and revert file changes | Same as `/rewind`. <br>*Type `/undo`.* |
 
 ### ⏰ Memory & scheduling (the "set it and forget it" powers)
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
-| `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
-| `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot **remember useful facts about you and your work** between chats, so you don't repeat yourself. (It remembers facts, not whole conversations.) *Options: `on` (start remembering) · `off` (stop) · `show` (see what it knows).* |
-| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | **Tidies up what Copilot remembers** in the background — like your brain sorting memories while you sleep. *Args: `run`. ⚠️ Currently gated off on many accounts — may show "Unknown command."* |
-| `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. *Type `/keep-alive`.* |
-| `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. *Type `/chronicle`.* |
+| `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. <br>*Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
+| `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. <br>*Example: `/after 30m remind me to push my code`.* ⭐ |
+| `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot **remember useful facts about you and your work** between chats, so you don't repeat yourself. (It remembers facts, not whole conversations.) <br>*Options: `on` (start remembering) · `off` (stop) · `show` (see what it knows).* |
+| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | **Tidies up what Copilot remembers** in the background — like your brain sorting memories while you sleep. <br>*Args: `run`. ⚠️ Currently gated off on many accounts — may show "Unknown command."* |
+| `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. <br>*Type `/keep-alive`.* |
+| `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. <br>*Type `/chronicle`.* |
 
 ### 🔎 Research, search & ask
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/research` | Run deep research investigation using GitHub search and web sources | Does deep homework across GitHub and the web, with sources. *Type `/research best way to cache in Redis`.* ⭐ |
-| `/ask` | Ask a quick side question without adding to conversation history | A quick side question that won't clutter the main chat. *Type `/ask what does this error mean?`* |
-| `/search` | Search the conversation timeline | Find something said earlier in this chat. *Type `/search database`.* |
+| `/research` | Run deep research investigation using GitHub search and web sources | Does deep homework across GitHub and the web, with sources. <br>*Type `/research best way to cache in Redis`.* ⭐ |
+| `/ask` | Ask a quick side question without adding to conversation history | A quick side question that won't clutter the main chat. <br>*Type `/ask what does this error mean?`* |
+| `/search` | Search the conversation timeline | Find something said earlier in this chat. <br>*Type `/search database`.* |
 
 ### 🎙️ Voice, help & settings
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/voice` | Manage voice mode (dictation transcription via Foundry Local) | Talk instead of type — your speech becomes text **on your own device** (private). *First use downloads a model; pick the larger one for fewer errors.* |
-| `/help` | Show help for interactive commands | The full command list. *Type `/help`.* |
-| `/changelog` | Display changelog for CLI versions. Add 'summarize' to get an AI summary. | See what's new in each version. *Type `/changelog`, or `/changelog summarize`.* |
-| `/feedback` | Provide feedback about the CLI | Tell the GitHub team what's good or broken. *Type `/feedback`.* |
-| `/theme` | View or set color mode | Switch colors (light/dark/custom). *Type `/theme`.* |
-| `/statusline` | Configure status line items | Customize the info bar at the bottom. *Type `/statusline`.* |
-| `/footer` | Configure status line items | Customize the footer bar. *Type `/footer`.* |
-| `/streamer-mode` ⚠️ | Toggle streamer mode (hides preview model names and quota details for streaming) | Hides private details when screen-sharing — your **quota %** in the footer, and **preview model names** (in the `/model` list they show as *"Hidden Model 1, 2, 3…"*). *Turn it ON before you present. ⚠️ Internal/staff-only — may not appear on every account.* |
-| `/instructions` 🔧 | View and toggle custom instruction files | Shows the **"house rules" files** Copilot is following, and lets you turn them on or off. *Type `/instructions`.* |
-| `/env` 🔧 | Show loaded environment details (instructions, MCP servers, skills, agents, plugins, LSPs, extensions) | One screen showing everything that's loaded. *Type `/env`.* |
-| `/experimental` 🔧 | Show available experimental features, or enable/disable experimental mode | Turn on early, in-progress features. *Type `/experimental`.* |
+| `/voice` | Manage voice mode (dictation transcription via Foundry Local) | Talk instead of type — your speech becomes text **on your own device** (private). <br>*First use downloads a model; pick the larger one for fewer errors.* |
+| `/help` | Show help for interactive commands | The full command list. <br>*Type `/help`.* |
+| `/changelog` | Display changelog for CLI versions. Add 'summarize' to get an AI summary. | See what's new in each version. <br>*Type `/changelog`, or `/changelog summarize`.* |
+| `/feedback` | Provide feedback about the CLI | Tell the GitHub team what's good or broken. <br>*Type `/feedback`.* |
+| `/theme` | View or set color mode | Switch colors (light/dark/custom). <br>*Type `/theme`.* |
+| `/statusline` | Configure status line items | Customize the info bar at the bottom. <br>*Type `/statusline`.* |
+| `/footer` | Configure status line items | Customize the footer bar. <br>*Type `/footer`.* |
+| `/streamer-mode` ⚠️ | Toggle streamer mode (hides preview model names and quota details for streaming) | Hides private details when screen-sharing — your **quota %** in the footer, and **preview model names** (in the `/model` list they show as *"Hidden Model 1, 2, 3…"*). <br>*Turn it ON before you present. ⚠️ Internal/staff-only — may not appear on every account.* |
+| `/instructions` 🔧 | View and toggle custom instruction files | Shows the **"house rules" files** Copilot is following, and lets you turn them on or off. <br>*Type `/instructions`.* |
+| `/env` 🔧 | Show loaded environment details (instructions, MCP servers, skills, agents, plugins, LSPs, extensions) | One screen showing everything that's loaded. <br>*Type `/env`.* |
+| `/experimental` 🔧 | Show available experimental features, or enable/disable experimental mode | Turn on early, in-progress features. <br>*Type `/experimental`.* |
 
 ### ⚙️ Account & app control
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/login` | Log in to Copilot | Sign in with your GitHub account. *Type `/login`.* |
-| `/logout` | Log out of an OAuth login session | Sign out. *Type `/logout`.* |
-| `/user` | Manage GitHub user list | Switch between GitHub accounts. *Type `/user`.* |
-| `/new` | Start a new conversation | Fresh chat, same session. *Type `/new`.* |
-| `/clear` | Abandon this session and start fresh | Throw away this session and start over. *Type `/clear`.* |
-| `/restart` | Restart the CLI, preserving the current session | Reboot the app but keep your work. *Type `/restart`.* |
-| `/update` | Update the CLI to the latest version | Updates **Copilot CLI itself** (runs `npm i -g @github/copilot`). *Note: this does NOT update your MCP servers, skills, or plugins — those are managed separately via `/mcp`, `/skills`, `/plugin`.* |
-| `/version` | Display version information and check for updates | Show which version you're on. *Type `/version`.* |
-| `/exit` | Exit the CLI; use 'print' to print the session after exiting alt screen | Quit. *Type `/exit`.* |
+| `/login` | Log in to Copilot | Sign in with your GitHub account. <br>*Type `/login`.* |
+| `/logout` | Log out of an OAuth login session | Sign out. <br>*Type `/logout`.* |
+| `/user` | Manage GitHub user list | Switch between GitHub accounts. <br>*Type `/user`.* |
+| `/new` | Start a new conversation | Fresh chat, same session. <br>*Type `/new`.* |
+| `/clear` | Abandon this session and start fresh | Throw away this session and start over. <br>*Type `/clear`.* |
+| `/restart` | Restart the CLI, preserving the current session | Reboot the app but keep your work. <br>*Type `/restart`.* |
+| `/update` | Update the CLI to the latest version | Updates **Copilot CLI itself** (runs `npm i -g @github/copilot`). <br>*Note: this does NOT update your MCP servers, skills, or plugins — those are managed separately via `/mcp`, `/skills`, `/plugin`.* |
+| `/version` | Display version information and check for updates | Show which version you're on. <br>*Type `/version`.* |
+| `/exit` | Exit the CLI; use 'print' to print the session after exiting alt screen | Quit. <br>*Type `/exit`.* |
 
 *(⭐ 🔧 ⚠️ — see the **Legend** at the top of this section.)*
 
