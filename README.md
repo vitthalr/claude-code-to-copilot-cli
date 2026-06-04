@@ -116,17 +116,17 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
 | `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. *Type `/init` once per project. Add `/init suppress` to do it quietly (it still writes the file, just without the chatty output).* |
-| `/agent` | Browse and select from available agents (if any) | Picks a specialist helper (a custom agent) for the job. *Type `/agent` and choose from the list.* |
+| `/agent` | Browse and select from available agents (if any) | Picks a **specialist helper** for the job — like choosing the right expert from a list. *Type `/agent` and choose one.* |
 | `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). *Subcommands: `list`, `info`, `reload` — e.g. `/skills list`.* |
-| `/mcp` | Manage MCP server configuration | Connects outside tools — browsers, databases, Figma, etc. *Subcommands: `list`, `show`, `enable`, `disable`, `reload` — e.g. `/mcp list`.* |
+| `/mcp` | Manage MCP server configuration | Plugs **outside tools** into Copilot — like a browser, a database, or Figma. Think of it as adding new apps to your phone. *Subcommands: `list`, `show`, `enable`, `disable`, `reload` — e.g. `/mcp list`.* |
 | `/plugin` | Manage plugins and plugin marketplaces | Installs bundles of extra features from a store. *Type `/plugin list`.* |
 
 ### 🤖 Pick a brain & run helpers
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
 | `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. *Type `/model` and pick one.* ⭐ |
-| `/delegate` | Send this session to GitHub and Copilot will create a PR | Hand the whole task to GitHub's cloud; it does the work and opens a pull request for you. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
-| `/fleet` | Enable fleet mode for parallel subagent execution | Runs several helper agents at the same time, so big jobs finish faster. *Type `/fleet` then describe the work.* ⭐ |
+| `/delegate` | Send this session to GitHub and Copilot will create a PR | **Hand the whole job to GitHub's cloud** — it does the work on its own computers and hands you back finished changes (a "pull request") to review. You don't have to babysit it. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
+| `/fleet` | Enable fleet mode for parallel subagent execution | Puts **several helpers to work at the same time** instead of one, so big jobs finish faster — like a team splitting up chores. *Type `/fleet` then describe the work.* ⭐ |
 | `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests` (setting an explicit objective may be rolling out).* ⭐ |
 | `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. *Type `/tasks`.* |
 | `/rubber-duck` | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question).* ⭐ |
@@ -134,7 +134,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### 💻 Write & review code
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/ide` | Connect to an IDE workspace | Links Copilot to your VS Code window so they share the same files. *Type `/ide`.* |
+| `/ide` | Connect to an IDE workspace | Links Copilot to your **code editor** (VS Code) so they share the same files and you see changes live. *Type `/ide`.* |
 | `/diff` | Review the changes made in the current directory | Shows exactly what was changed, line by line. *Type `/diff`.* |
 | `/pr` 🔧 | Operate on pull requests for the current branch | Create, view, or work on a GitHub pull request. *Type `/pr`.* |
 | `/review` | Run code review agent to analyze changes | A robot reviewer reads your changes and flags real problems. *Type `/review`.* ⭐ |
@@ -151,17 +151,17 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
 | `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
 | `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
-| `/sandbox` 🔧 | Configure sandbox modes | Runs things in a safe, walled-off space. *Args: `enable` / `disable`.* |
+| `/sandbox` 🔧 | Configure sandbox modes | Puts a **safety wall** around the agent: it can work inside your project folder, but **can't touch the rest of your computer**. Like saying "you can play in this room, but the other doors are locked." *Args: `enable` / `disable`.* |
 
 ### 🗂️ Manage your session
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
 | `/resume` | Switch to a different session (optionally specify session ID, task ID, or name) | Re-opens an earlier conversation. *Type `/resume`.* |
 | `/rename` | Rename the current session | Gives this chat a memorable name. *Type `/rename demo-prep`.* |
-| `/context` | Show context window token usage and visualization | Shows how "full" the AI's memory is right now. *Type `/context`.* |
-| `/usage` | Display session usage metrics and statistics | Shows how much you've used this session. *Type `/usage`.* |
+| `/context` | Show context window token usage and visualization | Shows **how full the AI's short-term memory is** right now — like a battery bar for how much it can still keep in mind. *Type `/context`.* |
+| `/usage` | Display session usage metrics and statistics | Shows **how much you've used** in this chat (requests, etc.) — like checking your data usage. *Type `/usage`.* |
 | `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your sessions. *Subcommands: `info`, `checkpoints`, `files`, `plan`, `rename` — e.g. `/session info`.* |
-| `/compact` | Summarize conversation history to reduce context window usage. Optionally provide focus instructions. | Shrinks a long chat into a summary to free up memory. *Type `/compact`, or `/compact keep the auth details`.* |
+| `/compact` | Summarize conversation history to reduce context window usage. Optionally provide focus instructions. | When a chat gets long and slow, this **shrinks it into a short summary** so the AI stays fast — like zipping a big file. *Type `/compact`, or `/compact keep the login details`.* |
 | `/share` | Share session or research report to markdown file, HTML file, or GitHub gist | Saves the conversation as a file or link you can send. *Type `/share`.* |
 | `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. *Args: `on` / `off` / `show` — e.g. `/remote on`.* ⭐ |
 | `/copy` | Copy the last response to the clipboard | Copies the last answer so you can paste it. *Type `/copy`.* |
@@ -173,8 +173,8 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 |---|---|---|
 | `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
 | `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
-| `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot remember things between sessions. *Type `/memory show`, or `/memory on`.* |
-| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Args: `run`. ⚠️ Currently gated off on many accounts — may show "Unknown command."* |
+| `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot **remember useful facts about you and your work** between chats, so you don't repeat yourself. (It remembers facts, not whole conversations.) *Args: `on`, `off`, `show` — e.g. `/memory show`.* |
+| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | **Tidies up what Copilot remembers** in the background — like your brain sorting memories while you sleep. *Args: `run`. ⚠️ Currently gated off on many accounts — may show "Unknown command."* |
 | `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. *Type `/keep-alive`.* |
 | `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. *Type `/chronicle`.* |
 
@@ -196,7 +196,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/statusline` | Configure status line items | Customize the info bar at the bottom. *Type `/statusline`.* |
 | `/footer` | Configure status line items | Customize the footer bar. *Type `/footer`.* |
 | `/streamer-mode` ⚠️ | Toggle streamer mode (hides preview model names and quota details for streaming) | Hides private details when screen-sharing — your **quota %** in the footer, and **preview model names** (in the `/model` list they show as *"Hidden Model 1, 2, 3…"*). *Turn it ON before you present. ⚠️ Internal/staff-only — may not appear on every account.* |
-| `/instructions` 🔧 | View and toggle custom instruction files | See and switch which "house rules" files are active. *Type `/instructions`.* |
+| `/instructions` 🔧 | View and toggle custom instruction files | Shows the **"house rules" files** Copilot is following, and lets you turn them on or off. *Type `/instructions`.* |
 | `/env` 🔧 | Show loaded environment details (instructions, MCP servers, skills, agents, plugins, LSPs, extensions) | One screen showing everything that's loaded. *Type `/env`.* |
 | `/experimental` 🔧 | Show available experimental features, or enable/disable experimental mode | Turn on early, in-progress features. *Type `/experimental`.* |
 
