@@ -129,7 +129,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/research` | Run deep research investigation using GitHub search and web sources | Does deep homework across GitHub and the web, with sources. *Type `/research best way to cache in Redis`.* ⭐ |
 | `/ask` | Ask a quick side question without adding to conversation history | A quick side question that won't clutter the main chat. *Type `/ask what does this error mean?`* |
 | `/search` | Search the conversation timeline | Find something said earlier in this chat. *Type `/search database`.* |
-| `/sidekicks` | View running sidekick agents | See little helper agents running alongside you. *Type `/sidekicks`.* |
+| `/sidekicks` 🔧 | View running sidekick agents | See little helper agents running in the background. *Advanced/opt-in — usually empty unless sidekick agents are configured, so don't expect output by default.* |
 
 ### 🎙️ Voice, help & settings
 | Command | What Copilot shows you | In plain words (+ how to type it) |
