@@ -206,7 +206,7 @@ These special keys work right in the prompt:
 
 ## 5. Project memory & instructions
 
-Copilot CLI reads all of these (in priority order), so it remembers how your project works:
+Copilot CLI reads **all** of these files (the ones that exist), so it remembers how your project works:
 
 ```
 CLAUDE.md                              ← your existing Claude file works as-is!
@@ -217,6 +217,14 @@ AGENTS.md                              ← in git root & current folder
 $HOME/.copilot/copilot-instructions.md
 COPILOT_CUSTOM_INSTRUCTIONS_DIRS       ← env var for extra folders
 ```
+
+**Does it understand `CLAUDE.md`? Yes — no rename needed.** It's a built-in convention; Copilot CLI looks for `CLAUDE.md` automatically.
+
+**Which one "wins" if I have several?** None — **they're merged, not ranked.** Copilot loads every file that exists and **combines them into one instruction set** (e.g. `CLAUDE.md` *plus* `AGENTS.md` *plus* `.github/copilot-instructions.md` are all honored together). So your old Claude setup keeps working, and you can layer Copilot-specific rules on top.
+
+> ⚠️ **The one thing to avoid:** don't write **contradictory** rules in two different files. Since all of them reach the model, conflicting instructions confuse the *answer* — not the file-loading. Keep your rules consistent across files.
+
+**Migration tip:** your existing `CLAUDE.md` is honored as-is. No rewrite needed.
 
 ---
 
