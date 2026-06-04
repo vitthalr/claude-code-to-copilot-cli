@@ -55,6 +55,8 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 
 > **How to read this table:** The middle column is the **exact words Copilot shows you** when you type `/`. The right column is the same idea **in plain English**, with an example of how to type it. Some commands take extra input (shown in `< >`) — just type the command, a space, then your text.
 
+> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is fair game for you.
+
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
@@ -79,22 +81,22 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 |---|---|---|
 | `/ide` | Connect to an IDE workspace | Links Copilot to your VS Code window so they share the same files. *Type `/ide`.* |
 | `/diff` | Review the changes made in the current directory | Shows exactly what was changed, line by line. *Type `/diff`.* |
-| `/pr` | Operate on pull requests for the current branch | Create, view, or work on a GitHub pull request. *Type `/pr`.* |
+| `/pr` 🔧 | Operate on pull requests for the current branch | Create, view, or work on a GitHub pull request. *Type `/pr`.* |
 | `/review` | Run code review agent to analyze changes | A robot reviewer reads your changes and flags real problems. *Type `/review`.* ⭐ |
-| `/security-review` | Analyze staged and unstaged changes for security vulnerabilities. | Scans your changes for security holes before you ship. *Type `/security-review`.* ⭐ |
-| `/lsp` | Manage language server configuration | Controls the "spell-checker for code" (TypeScript, Python, etc.). *Type `/lsp`.* |
+| `/security-review` 🔧 | Analyze staged and unstaged changes for security vulnerabilities. | Scans your changes for security holes before you ship. *Type `/security-review`.* ⭐ |
+| `/lsp` 🔧 | Manage language server configuration | Controls the "spell-checker for code" (TypeScript, Python, etc.). *Type `/lsp`.* |
 | `/plan` | Create an implementation plan before coding | Makes a step-by-step plan first, then codes. *Type `/plan build a login page`.* |
-| `/terminal-setup` | Configure terminal for multiline input support (shift+enter) | One-time setup so `shift+enter` makes a new line. *Type `/terminal-setup` once.* |
+| `/terminal-setup` 🔧 | Configure terminal for multiline input support (shift+enter) | One-time setup so `shift+enter` makes a new line. *Type `/terminal-setup` once.* |
 
 ### 🔐 Permissions & safety
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
 | `/allow-all` | Enable all permissions (tools, paths, and URLs) | Stops asking "is this OK?" for everything — fast, but use only in folders you trust. *Type `/allow-all`.* |
-| `/add-dir` | Add a directory to the allowed list for file access | Lets Copilot touch one extra folder. *Type `/add-dir ./my-folder`.* |
-| `/list-dirs` | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
-| `/cwd` | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
-| `/reset-allowed-tools` | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
-| `/sandbox` | Configure sandbox modes | Runs things in a safe, walled-off space. *Type `/sandbox enable`.* |
+| `/add-dir` 🔧 | Add a directory to the allowed list for file access | Lets Copilot touch one extra folder. *Type `/add-dir ./my-folder`.* |
+| `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
+| `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
+| `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
+| `/sandbox` 🔧 | Configure sandbox modes | Runs things in a safe, walled-off space. *Type `/sandbox enable`.* |
 
 ### 🗂️ Manage your session
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -117,7 +119,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
 | `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
 | `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot remember things between sessions. *Type `/memory show`, or `/memory on`.* |
-| `/subconscious` | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`.* |
+| `/subconscious` 🔧 | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`.* |
 | `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. *Type `/keep-alive`.* |
 | `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. *Type `/chronicle`.* |
 
@@ -140,9 +142,9 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/statusline` | Configure status line items | Customize the info bar at the bottom. *Type `/statusline`.* |
 | `/footer` | Configure status line items | Customize the footer bar. *Type `/footer`.* |
 | `/streamer-mode` | Toggle streamer mode (hides preview model names and quota details for streaming) | Hides private details — perfect for live demos or screen-sharing. *Type `/streamer-mode`.* |
-| `/instructions` | View and toggle custom instruction files | See and switch which "house rules" files are active. *Type `/instructions`.* |
-| `/env` | Show loaded environment details (instructions, MCP servers, skills, agents, plugins, LSPs, extensions) | One screen showing everything that's loaded. *Type `/env`.* |
-| `/experimental` | Show available experimental features, or enable/disable experimental mode | Turn on early, in-progress features. *Type `/experimental`.* |
+| `/instructions` 🔧 | View and toggle custom instruction files | See and switch which "house rules" files are active. *Type `/instructions`.* |
+| `/env` 🔧 | Show loaded environment details (instructions, MCP servers, skills, agents, plugins, LSPs, extensions) | One screen showing everything that's loaded. *Type `/env`.* |
+| `/experimental` 🔧 | Show available experimental features, or enable/disable experimental mode | Turn on early, in-progress features. *Type `/experimental`.* |
 
 ### ⚙️ Account & app control
 | Command | What Copilot shows you | In plain words (+ how to type it) |
