@@ -86,6 +86,32 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | 🔧 | **Engineer / setup** — plumbing for developers. Designers can safely skip these. |
 | ⚠️ | **Off by default / internal** — may show "Unknown command" unless enabled for your account. Not a bug. |
 
+**⌨️ Commands that take arguments — at a glance.** Most commands you just type on their own. These accept extra input after the slash (type the command, a space, then your text or one of the options):
+
+| Command | What you can type after it |
+|---|---|
+| `/model` | `<model name>` — or just `/model` to pick from a menu |
+| `/mcp` | `list` · `show` · `enable` · `disable` · `reload` |
+| `/skills` | `list` · `info` · `reload` |
+| `/plugin` | `list` |
+| `/session` | `info` · `checkpoints` · `files` · `plan` · `rename` |
+| `/memory` | `on` · `off` · `show` |
+| `/remote` | `on` · `off` · `show` |
+| `/sandbox` | `enable` · `disable` |
+| `/autopilot` | `on` · `off` · or an `<objective>` (e.g. `fix all failing tests`) |
+| `/init` | `suppress` (do it quietly) |
+| `/every` | `<interval> <prompt>` — e.g. `/every 10m run the tests` |
+| `/after` | `<delay> <prompt>` — e.g. `/after 30m remind me to push` |
+| `/fleet` | `<prompt>` — what the parallel agents should do |
+| `/plan` | `<prompt>` — what to plan |
+| `/research` | `<topic>` — what to research |
+| `/review` · `/rubber-duck` · `/security-review` | `<additional instructions>` (optional) |
+| `/compact` | `<focus instructions>` (optional) — what to keep |
+| `/rename` | `<name>` — name for this session |
+| `/add-dir` · `/cwd` | `<directory>` — a folder path |
+
+> Intervals/delays look like `30s`, `5m`, `2h`, `1d`.
+
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
