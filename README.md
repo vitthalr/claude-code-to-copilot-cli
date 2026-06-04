@@ -35,7 +35,7 @@ You do **not** need to memorize the big table below. For vibe-coding, these 10 m
 | 9 | `/resume` | Jump back into an earlier chat |
 | 10 | `/help` | See everything |
 
-> 📋 **A note on availability:** Copilot CLI is rolling out fast. Some commands sit behind feature flags, account entitlements, or your organization's policy. **If a command below doesn't appear in your `/help`, you're not doing anything wrong** — it just may not be switched on for your account yet. The 10 moves above work for everyone.
+> 📋 **A note on availability — read this before the session!** Copilot CLI is rolling out fast, and a handful of commands are switched **off by default** unless your account or organization has enabled them. **If you type one and see "Unknown command", you're not doing anything wrong — it's just not turned on for you yet.** The commands most likely to be unavailable are: **`/every`, `/after`, `/rubber-duck`, `/security-review`, `/sandbox`, and `/subconscious`** (all tagged ⚠️ below). A few others (`/streamer-mode`) are internal-only. The 10 moves above, and everything untagged, work for everyone.
 
 ---
 
@@ -84,7 +84,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 |---|---|
 | ⭐ | **Star command** — an especially useful, "don't miss this" feature worth trying first. |
 | 🔧 | **Engineer / setup** — plumbing for developers. Designers can safely skip these. |
-| ⚠️ | **Internal or still rolling out** — may not appear in your `/help` yet. Not a bug. |
+| ⚠️ | **Off by default / internal** — may show "Unknown command" unless enabled for your account. Not a bug. |
 
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -101,9 +101,9 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. *Type `/model` and pick one.* ⭐ |
 | `/delegate` | Send this session to GitHub and Copilot will create a PR | Hand the whole task to GitHub's cloud; it does the work and opens a pull request for you. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
 | `/fleet` | Enable fleet mode for parallel subagent execution | Runs several helper agents at the same time, so big jobs finish faster. *Type `/fleet` then describe the work.* ⭐ |
-| `/autopilot` ⚠️ | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests`. ⚠️ Experimental — may be rolling out.* ⭐ |
+| `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests` (setting an explicit objective may be rolling out).* ⭐ |
 | `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. *Type `/tasks`.* |
-| `/rubber-duck` ⚠️ | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question). ⚠️ Rolling out — may not appear yet.* ⭐ |
+| `/rubber-duck` ⚠️ | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question). ⚠️ Off by default — may show "Unknown command" if not enabled for you.* ⭐ |
 
 ### 💻 Write & review code
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -112,7 +112,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/diff` | Review the changes made in the current directory | Shows exactly what was changed, line by line. *Type `/diff`.* |
 | `/pr` 🔧 | Operate on pull requests for the current branch | Create, view, or work on a GitHub pull request. *Type `/pr`.* |
 | `/review` | Run code review agent to analyze changes | A robot reviewer reads your changes and flags real problems. *Type `/review`.* ⭐ |
-| `/security-review` 🔧 | Analyze staged and unstaged changes for security vulnerabilities. | Scans your changes for security holes before you ship. *Type `/security-review`.* ⭐ |
+| `/security-review` 🔧 ⚠️ | Analyze staged and unstaged changes for security vulnerabilities. | Scans your changes for security holes before you ship. *Type `/security-review`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* ⭐ |
 | `/lsp` 🔧 | Manage language server configuration | Controls the "spell-checker for code" (TypeScript, Python, etc.). *Type `/lsp`.* |
 | `/plan` | Create an implementation plan before coding | Makes a step-by-step plan first, then codes. *Type `/plan build a login page`.* |
 | `/terminal-setup` 🔧 | Configure terminal for multiline input support (shift+enter) | One-time setup so `shift+enter` makes a new line. *Type `/terminal-setup` once.* |
@@ -125,7 +125,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
 | `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
 | `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
-| `/sandbox` 🔧 | Configure sandbox modes | Runs things in a safe, walled-off space. *Type `/sandbox enable`.* |
+| `/sandbox` 🔧 ⚠️ | Configure sandbox modes | Runs things in a safe, walled-off space. *Type `/sandbox enable`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* |
 
 ### 🗂️ Manage your session
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -145,10 +145,10 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### ⏰ Memory & scheduling (the "set it and forget it" powers)
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
-| `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
+| `/every` ⚠️ | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* ⭐ |
+| `/after` ⚠️ | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* ⭐ |
 | `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot remember things between sessions. *Type `/memory show`, or `/memory on`.* |
-| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`. ⚠️ Experimental — may be rolling out.* |
+| `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | Tidies up long-term memory in the background. *Type `/subconscious run`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* |
 | `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. *Type `/keep-alive`.* |
 | `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. *Type `/chronicle`.* |
 
