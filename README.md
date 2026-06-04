@@ -35,7 +35,7 @@ You do **not** need to memorize the big table below. For vibe-coding, these 10 m
 | 9 | `/resume` | Jump back into an earlier chat |
 | 10 | `/help` | See everything |
 
-> 📋 **A note on availability — good to know!** Most commands work for everyone. A few **newer** ones are still rolling out, so availability can vary by account and organization. In testing on this setup, **`/every`, `/after`, `/rubber-duck`, `/security-review`, and `/sandbox` all worked** — but `/subconscious` showed **"Unknown command"** (it's gated off for now). So: if you ever type a ⚠️-tagged command and see "Unknown command", you're not doing anything wrong — it just isn't switched on for your account yet. Everything untagged works for everyone.
+> 📋 **A quick note on availability.** Most commands work for everyone. A few newer ones are still rolling out, so they may not be switched on for every account yet. If you type a command tagged ⚠️ and see *"Unknown command,"* don't worry — it's not a mistake on your end, it just isn't enabled for you yet. Everything untagged works for everyone.
 
 ---
 
@@ -86,39 +86,15 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | 🔧 | **Engineer / setup** — plumbing for developers. Designers can safely skip these. |
 | ⚠️ | **Newer / rolling out** — works on most accounts, but may show "Unknown command" if not yet enabled for yours. Not a bug. |
 
-**⌨️ Commands that take arguments — at a glance.** Most commands you just type on their own. These accept extra input after the slash (type the command, a space, then your text or one of the options):
-
-| Command | What you can type after it |
-|---|---|
-| `/model` | `<model name>` — or just `/model` to pick from a menu |
-| `/mcp` | `list` · `show` · `enable` · `disable` · `reload` |
-| `/skills` | `list` · `info` · `reload` |
-| `/plugin` | `list` |
-| `/session` | `info` · `checkpoints` · `files` · `plan` · `rename` |
-| `/memory` | `on` · `off` · `show` |
-| `/remote` | `on` · `off` · `show` |
-| `/sandbox` | `enable` · `disable` |
-| `/autopilot` | `on` · `off` · or an `<objective>` (e.g. `fix all failing tests`) |
-| `/init` | `suppress` (do it quietly) |
-| `/every` | `<interval> <prompt>` — e.g. `/every 10m run the tests` |
-| `/after` | `<delay> <prompt>` — e.g. `/after 30m remind me to push` |
-| `/fleet` | `<prompt>` — what the parallel agents should do |
-| `/plan` | `<prompt>` — what to plan |
-| `/research` | `<topic>` — what to research |
-| `/review` · `/rubber-duck` · `/security-review` | `<additional instructions>` (optional) |
-| `/compact` | `<focus instructions>` (optional) — what to keep |
-| `/rename` | `<name>` — name for this session |
-| `/add-dir` · `/cwd` | `<directory>` — a folder path |
-
-> Intervals/delays look like `30s`, `5m`, `2h`, `1d`.
+> **Tip on arguments:** most commands you just type on their own. Some accept extra input after the slash — type the command, a space, then your text or one of the options. Each command below spells out its options. (Intervals/delays look like `30s`, `5m`, `2h`, `1d`.)
 
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
 | `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. *Type `/init` once per project. Add `/init suppress` to do it quietly (it still writes the file, just without the chatty output).* |
 | `/agent` | Browse and select from available agents (if any) | Picks a **specialist helper** for the job — like choosing the right expert from a list. *Type `/agent` and choose one.* |
-| `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). *Subcommands: `list`, `info`, `reload` — e.g. `/skills list`.* |
-| `/mcp` | Manage MCP server configuration | Plugs **outside tools** into Copilot — like a browser, a database, or Figma. Think of it as adding new apps to your phone. *Subcommands: `list`, `show`, `enable`, `disable`, `reload` — e.g. `/mcp list`.* |
+| `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). *Options: `list` (see all skills) · `info` (details of one) · `reload` (refresh after changes).* |
+| `/mcp` | Manage MCP server configuration | Plugs **outside tools** into Copilot — like a browser, a database, or Figma. Think of it as adding new apps to your phone. *Options: `list` (see connected tools) · `show` (details of one) · `enable` / `disable` (turn a tool on/off) · `reload` (refresh).* |
 | `/plugin` | Manage plugins and plugin marketplaces | Installs bundles of extra features from a store. *Type `/plugin list`.* |
 
 ### 🤖 Pick a brain & run helpers
@@ -127,7 +103,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/model` | Select AI model to use | Choose which AI brain runs — Claude, GPT-5, Gemini, etc. **Auto** lets Copilot pick for you, and one model is marked **(default)**. *Type `/model` and pick one.* ⭐ |
 | `/delegate` | Send this session to GitHub and Copilot will create a PR | **Hand the whole job to GitHub's cloud** — it does the work on its own computers and hands you back finished changes (a "pull request") to review. You don't have to babysit it. *Needs a GitHub repo. Type `/delegate`.* ⭐ |
 | `/fleet` | Enable fleet mode for parallel subagent execution | Puts **several helpers to work at the same time** instead of one, so big jobs finish faster — like a team splitting up chores. *Type `/fleet` then describe the work.* ⭐ |
-| `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep going on its own until the goal is met. *Type `/autopilot` to turn on, or `/autopilot fix all failing tests` (setting an explicit objective may be rolling out).* ⭐ |
+| `/autopilot` | Toggle autopilot mode or set an explicit objective | Lets Copilot keep working on its own until the goal is met. *Options: `on` / `off` (turn it on or off) · or type a goal like `/autopilot fix all failing tests` (giving an explicit goal may be rolling out).* ⭐ |
 | `/tasks` | View and manage tasks (subagents and shell commands) | A dashboard of everything currently running. *Type `/tasks`.* |
 | `/rubber-duck` | Get an independent critique of your current work from the rubber duck agent | Asks a second AI to double-check the plan and catch mistakes. *Type `/rubber-duck` (optionally add a question).* ⭐ |
 
@@ -151,7 +127,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
 | `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
 | `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
-| `/sandbox` 🔧 | Configure sandbox modes | Puts a **safety wall** around the agent: it can work inside your project folder, but **can't touch the rest of your computer**. Like saying "you can play in this room, but the other doors are locked." *Args: `enable` / `disable`.* |
+| `/sandbox` 🔧 | Configure sandbox modes | Puts a **safety wall** around the agent: it can work inside your project folder, but **can't touch the rest of your computer**. Like saying "you can play in this room, but the other doors are locked." *Options: `enable` (wall on) · `disable` (wall off).* |
 
 ### 🗂️ Manage your session
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -160,10 +136,10 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/rename` | Rename the current session | Gives this chat a memorable name. *Type `/rename demo-prep`.* |
 | `/context` | Show context window token usage and visualization | Shows **how full the AI's short-term memory is** right now — like a battery bar for how much it can still keep in mind. *Type `/context`.* |
 | `/usage` | Display session usage metrics and statistics | Shows **how much you've used** in this chat (requests, etc.) — like checking your data usage. *Type `/usage`.* |
-| `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your sessions. *Subcommands: `info`, `checkpoints`, `files`, `plan`, `rename` — e.g. `/session info`.* |
+| `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your chats. *Options: `info` (this chat's details) · `checkpoints` (saved restore points) · `files` (files this chat touched) · `plan` (the current plan) · `rename` (give it a name).* |
 | `/compact` | Summarize conversation history to reduce context window usage. Optionally provide focus instructions. | When a chat gets long and slow, this **shrinks it into a short summary** so the AI stays fast — like zipping a big file. *Type `/compact`, or `/compact keep the login details`.* |
 | `/share` | Share session or research report to markdown file, HTML file, or GitHub gist | Saves the conversation as a file or link you can send. *Type `/share`.* |
-| `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. *Args: `on` / `off` / `show` — e.g. `/remote on`.* ⭐ |
+| `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. *Options: `on` (allow phone control) · `off` (stop it) · `show` (check status).* ⭐ |
 | `/copy` | Copy the last response to the clipboard | Copies the last answer so you can paste it. *Type `/copy`.* |
 | `/rewind` | Rewind the last turn and revert file changes | Undo button — takes back the last step and its file edits. *Type `/rewind`.* |
 | `/undo` | Rewind the last turn and revert file changes | Same as `/rewind`. *Type `/undo`.* |
@@ -173,7 +149,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 |---|---|---|
 | `/every` | Schedule a recurring prompt or skill for this session | A repeating timer for your agent. Interval looks like `30s`, `5m`, `2h`, `1d`. *Example: `/every 10m run the tests and tell me if anything broke`.* ⭐ |
 | `/after` | Schedule a one-shot prompt or skill for this session | A one-time delayed task. *Example: `/after 30m remind me to push my code`.* ⭐ |
-| `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot **remember useful facts about you and your work** between chats, so you don't repeat yourself. (It remembers facts, not whole conversations.) *Args: `on`, `off`, `show` — e.g. `/memory show`.* |
+| `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot **remember useful facts about you and your work** between chats, so you don't repeat yourself. (It remembers facts, not whole conversations.) *Options: `on` (start remembering) · `off` (stop) · `show` (see what it knows).* |
 | `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | **Tidies up what Copilot remembers** in the background — like your brain sorting memories while you sleep. *Args: `run`. ⚠️ Currently gated off on many accounts — may show "Unknown command."* |
 | `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. *Type `/keep-alive`.* |
 | `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. *Type `/chronicle`.* |
