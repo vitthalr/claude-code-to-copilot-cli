@@ -89,10 +89,10 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
-| `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. *Just type `/init` once per project.* |
+| `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. *Type `/init` once per project. Add `/init suppress` to do it quietly (it still writes the file, just without the chatty output).* |
 | `/agent` | Browse and select from available agents (if any) | Picks a specialist helper (a custom agent) for the job. *Type `/agent` and choose from the list.* |
-| `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). *Type `/skills list` to see them.* |
-| `/mcp` | Manage MCP server configuration | Connects outside tools — browsers, databases, Figma, etc. *Type `/mcp list` to see what's connected.* |
+| `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). *Subcommands: `list`, `info`, `reload` — e.g. `/skills list`.* |
+| `/mcp` | Manage MCP server configuration | Connects outside tools — browsers, databases, Figma, etc. *Subcommands: `list`, `show`, `enable`, `disable`, `reload` — e.g. `/mcp list`.* |
 | `/plugin` | Manage plugins and plugin marketplaces | Installs bundles of extra features from a store. *Type `/plugin list`.* |
 
 ### 🤖 Pick a brain & run helpers
@@ -125,7 +125,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/list-dirs` 🔧 | Display all allowed directories for file access | Shows which folders Copilot is allowed to use. *Type `/list-dirs`.* |
 | `/cwd` 🔧 | Change working directory or show current directory | Shows or changes the folder you're working in. *Type `/cwd` to see it, or `/cwd ./project` to move.* |
 | `/reset-allowed-tools` 🔧 | Reset the list of allowed tools | Forgets all the "yes, allow" answers and starts fresh. *Type `/reset-allowed-tools`.* |
-| `/sandbox` 🔧 ⚠️ | Configure sandbox modes | Runs things in a safe, walled-off space. *Type `/sandbox enable`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* |
+| `/sandbox` 🔧 ⚠️ | Configure sandbox modes | Runs things in a safe, walled-off space. *Args: `enable` / `disable`. ⚠️ Off by default — may show "Unknown command" if not enabled for you.* |
 
 ### 🗂️ Manage your session
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -134,10 +134,10 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/rename` | Rename the current session | Gives this chat a memorable name. *Type `/rename demo-prep`.* |
 | `/context` | Show context window token usage and visualization | Shows how "full" the AI's memory is right now. *Type `/context`.* |
 | `/usage` | Display session usage metrics and statistics | Shows how much you've used this session. *Type `/usage`.* |
-| `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your sessions. *Type `/session info`.* |
+| `/session` | View and manage sessions. Use subcommands for details. | Inspect or organize your sessions. *Subcommands: `info`, `checkpoints`, `files`, `plan`, `rename` — e.g. `/session info`.* |
 | `/compact` | Summarize conversation history to reduce context window usage. Optionally provide focus instructions. | Shrinks a long chat into a summary to free up memory. *Type `/compact`, or `/compact keep the auth details`.* |
 | `/share` | Share session or research report to markdown file, HTML file, or GitHub gist | Saves the conversation as a file or link you can send. *Type `/share`.* |
-| `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. *Type `/remote on`.* ⭐ |
+| `/remote` | Show remote status or toggle remote control from GitHub web and mobile | Lets you steer this session from your phone or the web. *Args: `on` / `off` / `show` — e.g. `/remote on`.* ⭐ |
 | `/copy` | Copy the last response to the clipboard | Copies the last answer so you can paste it. *Type `/copy`.* |
 | `/rewind` | Rewind the last turn and revert file changes | Undo button — takes back the last step and its file edits. *Type `/rewind`.* |
 | `/undo` | Rewind the last turn and revert file changes | Same as `/rewind`. *Type `/undo`.* |
@@ -183,7 +183,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/new` | Start a new conversation | Fresh chat, same session. *Type `/new`.* |
 | `/clear` | Abandon this session and start fresh | Throw away this session and start over. *Type `/clear`.* |
 | `/restart` | Restart the CLI, preserving the current session | Reboot the app but keep your work. *Type `/restart`.* |
-| `/update` | Update the CLI to the latest version | Get the newest version. *Type `/update`.* |
+| `/update` | Update the CLI to the latest version | Updates **Copilot CLI itself** (runs `npm i -g @github/copilot`). *Note: this does NOT update your MCP servers, skills, or plugins — those are managed separately via `/mcp`, `/skills`, `/plugin`.* |
 | `/version` | Display version information and check for updates | Show which version you're on. *Type `/version`.* |
 | `/exit` | Exit the CLI; use 'print' to print the session after exiting alt screen | Quit. *Type `/exit`.* |
 
