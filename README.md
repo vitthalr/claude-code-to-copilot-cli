@@ -152,7 +152,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/memory` | Show memory status, or enable/disable memory across sessions | Lets Copilot **remember useful facts about you and your work** between chats, so you don't repeat yourself. (It remembers facts, not whole conversations.) <br>*Options: `on` (start remembering) · `off` (stop) · `show` (see what it knows).* |
 | `/subconscious` 🔧 ⚠️ | Manage Copilot Subconscious memory consolidation | **Tidies up what Copilot remembers** in the background — like your brain sorting memories while you sleep. <br>*Args: `run`. ⚠️ Currently gated off on many accounts — may show "Unknown command."* |
 | `/keep-alive` | Manage keep-alive mode (prevents system sleep). | Stops your Mac from sleeping during a long job. <br>*Type `/keep-alive`.* |
-| `/chronicle` | Session history tools and insights | Browse your past sessions and patterns. <br>*Type `/chronicle`.* |
+| `/chronicle` | Session history tools and insights | Looks back over your past chats and turns them into useful summaries. Like a diary that writes itself. <br>*Options: `standup` (what you got done, ready to share) · `tips` (personalized advice to use Copilot better) · `improve` (suggests fixes to your project's "house rules" file) · `cost-tips` (ways to use fewer tokens / save money) · `reindex` (rebuild the history if subcommands say "no sessions found").* |
 
 ### 🔎 Research, search & ask
 | Command | What Copilot shows you | In plain words (+ how to type it) |
