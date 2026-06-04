@@ -76,7 +76,15 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 
 > **How to read this table:** The middle column is the **exact words Copilot shows you** when you type `/`. The right column is the same idea **in plain English**, with an example of how to type it. Some commands take extra input (shown in `< >`) — just type the command, a space, then your text.
 
-> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is useful to know, though your exact `/help` list can vary by account, rollout, and organization policy. A **⚠️** means the command is **internal or still rolling out**, so it may not show up for you yet.
+> 👤 **Designers / vibe-coders, relax:** anything tagged **🔧** is engineer-focused setup or plumbing. It's nice to know it exists, but **you don't need it to vibe-code** — feel free to skip those rows. Everything else is useful to know, though your exact `/help` list can vary by account, rollout, and organization policy.
+
+**Legend — what the icons mean:**
+
+| Icon | Meaning |
+|---|---|
+| ⭐ | **Star command** — an especially useful, "don't miss this" feature worth trying first. |
+| 🔧 | **Engineer / setup** — plumbing for developers. Designers can safely skip these. |
+| ⚠️ | **Internal or still rolling out** — may not appear in your `/help` yet. Not a bug. |
 
 ### 🌐 Set up your agent's environment
 | Command | What Copilot shows you | In plain words (+ how to type it) |
@@ -179,7 +187,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | `/version` | Display version information and check for updates | Show which version you're on. *Type `/version`.* |
 | `/exit` | Exit the CLI; use 'print' to print the session after exiting alt screen | Quit. *Type `/exit`.* |
 
-⭐ = an especially useful Copilot CLI feature or workflow. (Availability may vary by account and rollout.)
+*(⭐ 🔧 ⚠️ — see the **Legend** at the top of this section.)*
 
 ---
 
