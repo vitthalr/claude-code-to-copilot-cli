@@ -35,28 +35,36 @@ And it's all built from the same small pieces you're about to learn: an agent's 
 **And here's how little it takes.** You're not writing code; you're writing plain English. Roughly:
 
 ```
-# 1. Give your agent its "personality", just a plain-text file of instructions.
-#    Drop these in your project (they're read automatically, see §5):
+# 1. Give each agent its "personality", just a plain-text file of instructions.
+#    Drop these context files in your project (they're read automatically, see §5):
 team-ops.md               ← what to pull: status, priorities, workstreams
 team-culture-playbook.md  ← how your team talks and makes decisions
 rob-leadership-style.md   ← the tone to write in
 
-# 2. Start Copilot in that folder
-copilot
-
-# 3. Ask for what you want, in normal words
-Draft this week's team update. Use team-ops.md for what happened,
+# 2. Turn it into a real, reusable agent: one file in .github/agents/
+#    Filename is the agent's name, e.g. .github/agents/weekly-update.agent.md
+---
+name: weekly-update
+description: Drafts our weekly team update in our own voice.
+tools: ["*"]            # which tools it may use (* = all). Optional.
+# model: claude-sonnet-4.5   # optional: pick a brain (any id from /model)
+---
+You are our weekly-update writer. Use team-ops.md for what happened,
 team-culture-playbook.md for how we phrase things, and rob-leadership-style.md
-for the tone. Keep it warm and to the point.
+for tone. Keep it warm and to the point, and save the result to updates/.
 
-# 4. Make it happen on its own, every Monday at 9am-ish
-/every 1d if it's Monday, draft the weekly team update and save it to updates/
+# 3. Start Copilot in that folder, then pick your agent
+copilot
+/agent                  ← lists your agents; choose "weekly-update"
 
-# 5. (optional) Run a few of these agents at once
+# 4. Make it run on its own, every Monday-ish
+/every 1d if it's Monday, run the weekly-update agent
+
+# 5. (optional) Run several agents at once
 /fleet
 ```
 
-That's the whole trick: **a few text files + a plain-English prompt + one `/every` timer.** If you can write a message to a teammate, you can set this up.
+That's the whole trick: **a few context files, one small agent file, and a `/every` timer.** If you can write a message to a teammate, you can set this up.
 
 ---
 
@@ -134,7 +142,7 @@ If your fingers already know Claude Code, here's the quick translation. Most thi
 | Command | What Copilot shows you | In plain words (+ how to type it) |
 |---|---|---|
 | `/init` | Initialize Copilot instructions for this repository | Creates a "house rules" file so Copilot remembers how your project works. <br>*Type `/init` once per project. Add `/init suppress` to do it quietly (it still writes the file, just without the chatty output).* |
-| `/agent` | Browse and select from available agents (if any) | Picks a **specialist helper** for the job, like choosing the right expert from a list. <br>*Type `/agent` and choose one.* |
+| `/agent` | Browse and select from available agents (if any) | Picks a **specialist helper** for the job, like choosing the right expert from a list. <br>*Type `/agent` and choose one. To **create** one, add a file like `.github/agents/my-agent.agent.md` with a short `name:` / `description:` header and your instructions in the body, then it shows up here.* |
 | `/skills` | Manage skills for enhanced capabilities | Turns extra abilities on or off (like add-on powers). <br>*Options: `list` (see all skills)<br>`info` (details of one)<br>`reload` (refresh after changes).* |
 | `/mcp` | Manage MCP server configuration | Plugs **outside tools** into Copilot, like a browser, a database, or Figma. Think of it as adding new apps to your phone. <br>*Options: `list` (see connected tools)<br>`show` (details of one)<br>`enable` / `disable` (turn a tool on/off)<br>`reload` (refresh).* |
 | `/plugin` | Manage plugins and plugin marketplaces | A **plugin is a bundle of extra features** you install from a store (a "marketplace"). <br>*Options: `list` (see installed plugins)<br>`marketplace add` / `remove` / `list` / `browse` (manage where plugins come from).* |
